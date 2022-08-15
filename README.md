@@ -27,4 +27,4 @@ These commands require `originspawn.admin` permission. The default permission is
 
 ## LICENSE
 
-[MIT License](./LICENSE)
+[GPL v3 License](./LICENSE)
