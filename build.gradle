@@ -30,7 +30,7 @@ configurations {
 
 dependencies {
     implementation 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
-    embed "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    embed 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
 }
 
 processResources {
