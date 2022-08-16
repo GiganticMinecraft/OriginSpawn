@@ -18,6 +18,25 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: jar
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Java & Gradle
+        uses: ./.github/actions/setup
+      - name: Bump version
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: releaseVersion
+      - name: Build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: jar
+      - name: debug steps
+        run: |
+          ls -la ./build/libs/
+          git show --summary
+          git tag
       - name: Upload jar
         uses: actions/upload-artifact@v3
         with:
