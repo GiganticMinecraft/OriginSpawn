@@ -4,7 +4,7 @@ data class LocX(val value: Double)
 
 data class LocY(val value: Double) {
     init {
-        if (value < 0.0) throw IllegalStateException("")
+        if (value < 0.0) throw IllegalStateException("Location Y must be 0.0 or more.")
     }
 }
 
