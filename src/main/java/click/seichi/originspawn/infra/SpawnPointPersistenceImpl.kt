@@ -29,7 +29,7 @@ class SpawnPointPersistenceImpl(private val plugin: JavaPlugin): SpawnPointPersi
         val config = plugin.config
         areAllConfigItemsSet(config)
 
-        val worldName = config.getString(ConfigItems.WORLD_NAME.key, "")
+        val worldName = config.getString(ConfigItems.WORLD_NAME.key, "world")
         val x = config.getDouble(ConfigItems.X.key)
         val y = config.getDouble(ConfigItems.Y.key, 64.0)
         val z = config.getDouble(ConfigItems.Z.key)
