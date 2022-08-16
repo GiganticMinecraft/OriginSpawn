@@ -17,10 +17,10 @@ jobs:
         with:
           distribution: temurin
           java-version: 8
-      - name: Setup Gradle and build
+      - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
-        with:
-          arguments: jar
+      - name: Build
+        run: chmod +x ./gradlew && ./gradlew jar
       - name: Upload jar
         uses: actions/upload-artifact@v3
         with:
