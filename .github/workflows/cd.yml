@@ -1,23 +1,15 @@
-name: CI and CD
+name: CI
 on:
   push:
+    branches:
+      - main
     paths-ignore:
       - .github/workflows/*.yml
-      - "!.github/workflows/ci-and-cd.yml"
+      - "!.github/workflows/cd.yml"
       - LICENSE
       - README.md
       - renovate.json
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Java & Gradle
-        uses: ./.github/actions/setup
-      - name: Build
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: jar
   release:
     runs-on: ubuntu-latest
     steps:
@@ -34,11 +26,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: jar
-      - name: debug steps
-        run: |
-          ls -la ./build/libs/
-          git show --summary
-          git tag
       - name: Upload jar
         uses: actions/upload-artifact@v3
         with:

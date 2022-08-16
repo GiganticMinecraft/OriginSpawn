@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    paths-ignore:
+      - .github/workflows/*.yml
+      - "!.github/workflows/ci.yml"
+      - LICENSE
+      - README.md
+      - renovate.json
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Java & Gradle
+        uses: ./.github/actions/setup
+      - name: Build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: jar
+      - name: Upload jar
+        uses: actions/upload-artifact@v3
+        with:
+          name: jar
+          path: ./build/libs/*.jar
