@@ -25,6 +25,11 @@ These commands require `originspawn.admin` permission. The default permission is
 | update  | Update location where the command sender is standing. |
 | reload  | Reload the location from config file.                 |                     
 
+## Development
+
+* Kotlin
+* Spigot 1.12.2
+
 ## LICENSE
 
 [GPL v3](./LICENSE)
