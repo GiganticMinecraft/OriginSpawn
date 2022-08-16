@@ -19,8 +19,8 @@ jobs:
           java-version: 8
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
-      - name: Build
-        run: chmod +x ./gradlew && ./gradlew jar
+        with:
+          arguments: jar
       - name: Upload jar
         uses: actions/upload-artifact@v3
         with:
