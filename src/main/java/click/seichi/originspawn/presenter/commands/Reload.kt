@@ -5,7 +5,7 @@ import click.seichi.originspawn.presenter.shared.MessageSender
 import org.bukkit.entity.Player
 
 object Reload : CommandExecutor("reload", "スポーン地点の設定を再読込します。", setOf("originspawn.admin")) {
-    override fun executor(sender: Player) {
+    override fun execute(sender: Player) {
         val messageSender = MessageSender(sender)
         if (!hasPermissions(sender)) {
             messageSender.severe("このコマンドを実行する権限がありません。")

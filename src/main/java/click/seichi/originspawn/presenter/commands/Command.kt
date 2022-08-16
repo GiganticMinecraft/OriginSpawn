@@ -29,7 +29,7 @@ object Command : TabExecutor {
         }
 
         val commandStr = args.getOrNull(0) ?: ""
-        commandsList().find { it.commandStr.lowercase() == commandStr }?.executor(sender) ?: run {
+        commandsList().find { it.commandStr.lowercase() == commandStr }?.execute(sender) ?: run {
             messageSender.severe("指定されたコマンドは存在しません。", "コマンドの使い方については、/originspawn help を参照してください。")
         }
 
@@ -42,7 +42,7 @@ abstract class CommandExecutor(
     val help: String,
     private val permissions: Set<String> = emptySet(),
 ) {
-    abstract fun executor(sender: Player)
+    abstract fun execute(sender: Player)
     fun hasPermissions(sender: Player) = permissions.all { sender.hasPermission(it) }
 }
 

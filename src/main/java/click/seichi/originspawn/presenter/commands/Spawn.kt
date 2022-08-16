@@ -9,7 +9,7 @@ import org.bukkit.entity.Player
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause
 
 object Spawn : CommandExecutor("", "設定されたスポーン地点にテレポートします。", setOf("originspawn.spawn")) {
-    override fun executor(sender: Player) {
+    override fun execute(sender: Player) {
         val messageSender = MessageSender(sender)
         if (!hasPermissions(sender)) {
             messageSender.severe("このコマンドを実行する権限がありません。")

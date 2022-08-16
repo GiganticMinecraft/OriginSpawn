@@ -4,7 +4,7 @@ import click.seichi.originspawn.presenter.shared.MessageSender
 import org.bukkit.entity.Player
 
 object Help : CommandExecutor("help", "OriginSpawnのコマンドヘルプを表示します。") {
-    override fun executor(sender: Player) {
+    override fun execute(sender: Player) {
         val messageSender = MessageSender(sender)
 
         messageSender.info(

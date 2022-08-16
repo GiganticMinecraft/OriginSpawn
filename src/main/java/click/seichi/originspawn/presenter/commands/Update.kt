@@ -8,7 +8,7 @@ import click.seichi.originspawn.presenter.toSpawnPoint
 import org.bukkit.entity.Player
 
 object Update : CommandExecutor("update", "スポーン地点の設定を現在の座標に更新します。", setOf("originspawn.admin")) {
-    override fun executor(sender: Player) {
+    override fun execute(sender: Player) {
         val messageSender = MessageSender(sender)
         if (!hasPermissions(sender)) {
             messageSender.severe("このコマンドを実行する権限がありません。")
@@ -22,6 +22,6 @@ object Update : CommandExecutor("update", "スポーン地点の設定を現在�
         messageSender.info(updatedMessage)
         ServerLogger.info(updatedMessage, SPAWN_POINT_PERSISTENCE.get().format())
 
-        Reload.executor(sender)
+        Reload.execute(sender)
     }
 }
