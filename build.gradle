@@ -4,10 +4,6 @@ plugins {
     id 'com.github.jmongard.git-semver-plugin' version '0.4.2'
 }
 
-semver {
-    groupVersionIncrements = false
-}
-
 group = 'click.seichi'
 version = semver.version
 
