@@ -24,7 +24,7 @@ jobs:
         with:
           arguments: releaseVersion
       - name: Git as GitHub Actions Bot
-        uses: Lucky3028/git-as-gha@v1.0.0
+        uses: Lucky3028/git-as-gha@v1.0.1
       - name: Push changes
         run: git push --follow-tags
       - name: Build
