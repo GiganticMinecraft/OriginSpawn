@@ -1,4 +1,4 @@
-package click.seichi.originspawn
+package click.seichi.originspawn.domain
 
 data class LocX(val value: Double)
 

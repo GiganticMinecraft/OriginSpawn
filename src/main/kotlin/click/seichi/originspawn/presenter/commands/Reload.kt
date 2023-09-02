@@ -12,7 +12,7 @@ object Reload : CommandExecutor("reload", "スポーン地点の設定を再読�
             return
         }
 
-        SPAWN_POINT_PERSISTENCE.load()
+        SPAWN_POINT_PERSISTENCE.get()
         messageSender.info("スポーン地点の設定を再読込しました。")
     }
 }
