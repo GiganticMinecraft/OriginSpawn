@@ -11,7 +11,7 @@ class MiscSettingsPersistenceImpl(private val plugin: JavaPlugin): MiscSettingsP
 
     override fun get(): MiscSettings {
         if (!::miscSettings.isInitialized) {
-            val alwaysForcePlayersSpawn = plugin.config.getBoolean(ALWAYS_FORCE_PLAYERS_SPAWN)
+            val alwaysForcePlayersSpawn = plugin.config.getBoolean(ALWAYS_FORCE_PLAYERS_SPAWN, false)
 
             miscSettings = MiscSettings(alwaysForcePlayersSpawn)
         }
