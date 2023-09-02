@@ -1,6 +1,6 @@
 package click.seichi.originspawn.presenter
 
-import click.seichi.originspawn.*
+import click.seichi.originspawn.domain.*
 import org.bukkit.Bukkit
 import org.bukkit.Location
 
