@@ -23,7 +23,13 @@ These commands require `originspawn.admin` permission. The default permission is
 | Command | Description                                           | 
 |---------|-------------------------------------------------------|
 | update  | Update location where the command sender is standing. |
-| reload  | Reload the location from config file.                 |                     
+| reload  | Reload the location from config file.                 |      
+
+## Settings(config.yml)
+
+| Key                        | Description                                                                    | Default |
+|----------------------------|--------------------------------------------------------------------------------|---------|
+| always-force-players-spawn | Whether teleport the players to the spawn point when they join to your server. | false   |
 
 ## Development
 
