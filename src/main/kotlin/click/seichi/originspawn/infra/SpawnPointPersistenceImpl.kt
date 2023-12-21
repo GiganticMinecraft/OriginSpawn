@@ -34,7 +34,7 @@ class SpawnPointPersistenceImpl(private val plugin: JavaPlugin): SpawnPointPersi
             val yaw = config.getDouble(ConfigItems.YAW.key).toFloat()
             val pitch = config.getDouble(ConfigItems.PITCH.key).toFloat()
 
-            spawnPoint = SpawnPoint(worldName, LocX(x), LocY(y), LocZ(z), Yaw(yaw), Pitch(pitch))
+            spawnPoint = worldName?.let { SpawnPoint(it, LocX(x), LocY(y), LocZ(z), Yaw(yaw), Pitch(pitch)) }!!
         }
 
         return spawnPoint
