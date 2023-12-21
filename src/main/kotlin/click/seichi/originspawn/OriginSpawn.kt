@@ -23,7 +23,7 @@ class OriginSpawn : JavaPlugin() {
         MISC_SETTINGS = MiscSettingsPersistenceImpl(this)
         MISC_SETTINGS.get()
 
-        getCommand("originspawn").executor = Command
+        getCommand("originspawn")?.setExecutor(Command)
         server.pluginManager.registerEvents(PlayerJoinListener, this)
 
         ServerLogger.info("OriginSpawn has been enabled.")
