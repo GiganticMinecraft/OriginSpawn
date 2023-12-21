@@ -16,9 +16,7 @@ object Update : CommandExecutor("update", "スポーン地点の設定を現在�
         }
 
         val spawnPoint = sender.location.toSpawnPoint()
-        if (spawnPoint != null) {
-            SPAWN_POINT_PERSISTENCE.save(spawnPoint)
-        }
+        SPAWN_POINT_PERSISTENCE.save(spawnPoint)
 
         val updatedMessage = "スポーン地点の設定を更新しました。"
         messageSender.info(updatedMessage)
