@@ -29,8 +29,8 @@ configurations {
 }
 
 dependencies {
-    implementation 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
-    embed 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT'
+    embed 'org.jetbrains.kotlin:kotlin-stdlib'
 }
 
 processResources {
@@ -43,12 +43,12 @@ processResources {
 }
 compileKotlin {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "1.17"
     }
 }
 compileTestKotlin {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "1.17"
     }
 }
 jar {
