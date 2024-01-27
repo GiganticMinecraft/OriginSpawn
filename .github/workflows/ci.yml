@@ -15,7 +15,7 @@ jobs:
       - name: Setup Java & Gradle
         uses: ./.github/actions/setup
       - name: Build
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
         with:
           arguments: jar
       - name: Upload jar
