@@ -20,7 +20,7 @@ jobs:
       - name: Setup Java & Gradle
         uses: ./.github/actions/setup
       - name: Bump version
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
         with:
           arguments: releaseVersion
       - name: Git as GitHub Actions Bot
@@ -28,7 +28,7 @@ jobs:
       - name: Push changes
         run: git push --follow-tags
       - name: Build
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
         with:
           arguments: jar
       - name: Upload jar
